@@ -1,6 +1,8 @@
 {
   "name": "hope",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "24423997"
 }
