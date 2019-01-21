@@ -4,6 +4,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-	Páginas sobre crença fundamentais
+<ion-content>
+	<ion-card *ngFor="let article of data?.articles" color='tertiary' (click)="onGoToCrenca(article)">
+	   <ion-card-header>
+	   	<ion-card-title>
+		   	{{article.title}}
+	   	</ion-card-title>
+	   </ion-card-header>
+
+	</ion-card>
 </ion-content>

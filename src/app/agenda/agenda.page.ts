@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsService } from '../news.service'
 
 @Component({
   selector: 'app-agenda',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./agenda.page.scss'],
 })
 export class AgendaPage implements OnInit {
-
-  constructor() { }
+  data: any;
+ 
+  constructor(private newsService: NewsService) { }
 
   ngOnInit() {
+	this.newsService.getData('everything?q=bitcoin&from=2018-12-21&sortBy=publishedAt')
+		.subscribe(data => {
+			console.log(data);
+      this.data = data
+		})
   }
 
 }

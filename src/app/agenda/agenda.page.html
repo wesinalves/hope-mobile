@@ -4,6 +4,19 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-	A agenda vai aqui
+<ion-content >
+	<ion-card *ngFor="let article of data?.articles" color='light'>
+	   <ion-card-header>
+	   	<ion-card-title>
+		   	{{article.title}}
+	   	</ion-card-title>
+	   </ion-card-header>
+	    <ion-card-content>
+    		<p>Data: {{article.publishedAt}}</p>
+    		<p>Local: IASD Anpa</p>
+    		<p>Status: Ativo</p>
+	    </ion-card-content>
+
+	</ion-card>
+	
 </ion-content>
