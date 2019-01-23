@@ -22,7 +22,7 @@ export class RepertorioPage implements OnInit {
 
   }
 
-  onGoToRepertorio(article){
+  getRepertorio(article){
     this.newsService.currentArticle = article
     this.router.navigate(['/resp-repertorio'])
   }

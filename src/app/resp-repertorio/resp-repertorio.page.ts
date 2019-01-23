@@ -16,4 +16,6 @@ export class RespRepertorioPage implements OnInit {
   	console.log(this.newsService.currentArticle);
   }
 
+  
+
 }
