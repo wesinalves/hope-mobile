@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class RepertorioPage implements OnInit {
 
   data: any;
+  nonfiltredData: any;
 
   constructor(private newsService: NewsService, private router: Router) { }
 
@@ -18,6 +19,7 @@ export class RepertorioPage implements OnInit {
   		.subscribe(data => {
   			console.log(data);
         this.data = data
+        this.nonfiltredData = data
   		})
 
   }
@@ -25,6 +27,15 @@ export class RepertorioPage implements OnInit {
   getRepertorio(article){
     this.newsService.currentArticle = article
     this.router.navigate(['/resp-repertorio'])
+  }
+
+  getFiltredRepertorio(ev: any){ 
+    let serVal = ev.target.value;
+    if(serVal && serVal.trim() != ''){
+      this.data.articles = this.nonfiltredData.articles.filter((article) => {
+        return (article.title.toLowerCase().indexOf(serVal.toLowerCase()) > -1);
+      })
+    }
   }
 
 }

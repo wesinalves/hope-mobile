@@ -6,7 +6,7 @@
 
 <ion-content>
 	<!-- List of Text Items -->
-	<ion-searchbar showCancelButton cancelButtonText="Custom Cancel"></ion-searchbar>
+	<ion-searchbar showCancelButton cancelButtonText="Custom Cancel" (ionInput) = getFiltredRepertorio($event)></ion-searchbar>
 	<ion-list>
 	  <ion-item (click)="getRepertorio(article)" *ngFor="let article of data?.articles">
 	    <ion-label>{{article.title}}</ion-label>
