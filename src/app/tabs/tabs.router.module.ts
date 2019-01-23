@@ -36,11 +36,11 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'crenca',
+        path: 'ideais',
         children: [
           {
             path: '',
-            loadChildren: '../crenca/crenca.module#CrencaPageModule'
+            loadChildren: '../ideais/ideais.module#IdeaisPageModule'
           }
         ]
       },
