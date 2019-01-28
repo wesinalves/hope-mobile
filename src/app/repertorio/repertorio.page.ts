@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsService } from '../news.service';
 import { Router } from '@angular/router';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-repertorio',
@@ -10,16 +11,15 @@ import { Router } from '@angular/router';
 export class RepertorioPage implements OnInit {
 
   data: any;
-  nonfiltredData: any;
+  filtredData: any;
 
   constructor(private newsService: NewsService, private router: Router) { }
 
   ngOnInit() {
-  	this.newsService.getData('everything?q=bitcoin&from=2018-12-23&sortBy=publishedAt')
+  	this.newsService.getData('everything?q=bitcoin&from=2018-12-28&sortBy=publishedAt')
   		.subscribe(data => {
-  			console.log(data);
-        this.data = data
-        this.nonfiltredData = data
+        this.data = _.clone(data)
+        this.filtredData = data
   		})
 
   }
@@ -29,13 +29,21 @@ export class RepertorioPage implements OnInit {
     this.router.navigate(['/resp-repertorio'])
   }
 
-  getFiltredRepertorio(ev: any){ 
+  getFiltredRepertorio(ev: any){
+
+    console.log(this.data)
+    console.log(this.filtredData)
+
     let serVal = ev.target.value;
     if(serVal && serVal.trim() != ''){
-      this.data.articles = this.nonfiltredData.articles.filter((article) => {
-        return (article.title.toLowerCase().indexOf(serVal.toLowerCase()) > -1);
+      this.filtredData.articles = this.data.articles.filter((a) => {
+        return (a.title.toLowerCase().indexOf(serVal.toLowerCase()) > -1);
       })
     }
+  }
+
+  getCleared(){
+    this.filtredData = _.clone(this.data)
   }
 
 }

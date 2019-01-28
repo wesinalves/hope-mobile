@@ -6,9 +6,9 @@
 
 <ion-content>
 	<!-- List of Text Items -->
-	<ion-searchbar showCancelButton cancelButtonText="Custom Cancel" (ionInput) = getFiltredRepertorio($event)></ion-searchbar>
+	<ion-searchbar showCancelButton cancelButtonText="Custom Cancel" (ionChange) = getFiltredRepertorio($event) (ionClear)=getCleared() id="searchText"></ion-searchbar>
 	<ion-list>
-	  <ion-item (click)="getRepertorio(article)" *ngFor="let article of data?.articles">
+	  <ion-item (click)="getRepertorio(article)" *ngFor="let article of filtredData?.articles">
 	    <ion-label>{{article.title}}</ion-label>
 	  </ion-item>
 	  
