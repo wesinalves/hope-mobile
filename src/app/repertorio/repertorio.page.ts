@@ -16,7 +16,7 @@ export class RepertorioPage implements OnInit {
   constructor(private newsService: NewsService, private router: Router) { }
 
   ngOnInit() {
-  	this.newsService.getData('everything?q=bitcoin&from=2018-12-28&sortBy=publishedAt')
+  	this.newsService.getData('everything?q=bitcoin&from=2018-12-30&sortBy=publishedAt')
   		.subscribe(data => {
         this.data = _.clone(data)
         this.filtredData = data
@@ -30,9 +30,6 @@ export class RepertorioPage implements OnInit {
   }
 
   getFiltredRepertorio(ev: any){
-
-    console.log(this.data)
-    console.log(this.filtredData)
 
     let serVal = ev.target.value;
     if(serVal && serVal.trim() != ''){
