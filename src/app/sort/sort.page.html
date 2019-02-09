@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>HOPE 2.0</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+	<h2>Sorteio Virtual</h2>
+	<ion-input type="number" placeholder="Menor valor" [(ngModel)]="low"></ion-input>
+	<ion-input type="number" placeholder="Maior valor" [(ngModel)]="high"></ion-input>
+	<ion-button color="medium" expand="full" (click)=startSort()>Sortear</ion-button>
+	<ion-text >
+		<h1>{{rand}}</h1>
+	</ion-text>
+
+</ion-content>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NewsService } from '../news.service'
+import { Agenda, AgendaService } from '../services/agenda.service';
 
 @Component({
   selector: 'app-agenda',
@@ -7,16 +7,18 @@ import { NewsService } from '../news.service'
   styleUrls: ['./agenda.page.scss'],
 })
 export class AgendaPage implements OnInit {
-  data: any;
+  agendas: Agenda[]
  
-  constructor(private newsService: NewsService) { }
+  constructor(private agendaService: AgendaService) { }
 
   ngOnInit() {
-	this.newsService.getData('everything?q=bitcoin&from=2018-12-30&sortBy=publishedAt')
-		.subscribe(data => {
-			console.log(data);
-      this.data = data
-		})
+	this.agendaService.getAgendas().subscribe(res => {
+        this.agendas = res;
+      });
+  }
+
+  remove(item) {
+      this.agendaService.removeAgenda(item.id);
   }
 
 }

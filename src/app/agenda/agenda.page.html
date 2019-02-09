@@ -1,20 +1,29 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Agenda</ion-title>
+  <ion-toolbar color="tertiary">
+    <ion-title>HOPE 2.0</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content >
-	<ion-card *ngFor="let article of data?.articles" color='light'>
+	<ng-container *ngIf="!agendas || agendas.length == 0">
+      <div *ngFor="let n of [0,1,2]" padding>
+        <ion-skeleton-text></ion-skeleton-text>
+        <p>
+          <ion-skeleton-text class="fake-skeleton"></ion-skeleton-text>
+        </p>
+      </div>
+    </ng-container>
+	<ion-card *ngFor="let item of agendas" color='light'>
 	   <ion-card-header>
 	   	<ion-card-title>
-		   	{{article.title}}
+		   	{{item.titulo}}
 	   	</ion-card-title>
 	   </ion-card-header>
 	    <ion-card-content>
-    		<p>Data: {{article.publishedAt}}</p>
-    		<p>Local: IASD Anpa</p>
-    		<p>Status: Ativo</p>
+    		<p>Data: {{item.dataInicio.toDate() | date:'short'}}</p>
+    		<p>Local: {{item.local}}</p>
+    		<p>Status: {{item.status}}</p>
+    		<p>Tipo: {{item.tipo}}</p>
 	    </ion-card-content>
 
 	</ion-card>

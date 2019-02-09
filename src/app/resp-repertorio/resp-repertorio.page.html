@@ -1,11 +1,12 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>{{article.title}}</ion-title>
+  <ion-toolbar color="tertiary">
+    <ion-title>HOPE 2.0</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
 	<ion-text>
+		<h2>{{article.title}}</h2>
 	    <p>{{article.description}}</p>
 	    <p>{{article.content}}</p>
 		<ion-button size="small" [routerLink]="['/tabs/repertorio']" routerDirection="back">Voltar</ion-button>

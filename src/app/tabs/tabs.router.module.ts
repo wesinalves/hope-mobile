@@ -44,6 +44,46 @@ const routes: Routes = [
           }
         ]
       },
+
+      {
+        path: 'sort',
+        children: [
+          {
+            path: '',
+            loadChildren: '../sort/sort.module#SortPageModule'
+          }
+        ]
+      },
+
+      {
+        path: 'crenca',
+        children: [
+          {
+            path: '',
+            loadChildren: '../crenca/crenca.module#CrencaPageModule'
+          }
+        ]
+      },
+
+      {
+        path: 'resp-crenca',
+        children: [
+          {
+            path: '',
+            loadChildren: '../resp-crenca/resp-crenca.module#RespCrencaPageModule'
+          }
+        ]
+      },
+
+      {
+        path: 'resp-repertorio',
+        children: [
+          {
+            path: '',
+            loadChildren: '../resp-repertorio/resp-repertorio.module#RespRepertorioPageModule'
+          }
+        ]
+      },
       
     ]
   },

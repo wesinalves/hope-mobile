@@ -1,16 +1,17 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>{{article.title}}</ion-title>
+  <ion-toolbar color="tertiary">
+    <ion-title>HOPE 2.0</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
 
 	<ion-text>
+		<h2>{{article.title}}</h2>
 	    <p>{{article.description}}</p>
 	    <p>{{article.content}}</p>
 	    <p>{{article.publishedAt}}</p>
-		<ion-button size="small" href='/tabs/crenca'>Voltar</ion-button>
+		<ion-button size="small" [routerLink]="['/tabs/crenca']">Voltar</ion-button>
 	</ion-text>
 
 </ion-content>

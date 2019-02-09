@@ -11,7 +11,7 @@ export class CrencaPage implements OnInit {
   constructor(private newsService: NewsService, private router: Router) { }
 
   ngOnInit() {
-  	this.newsService.getData('everything?q=bitcoin&from=2018-12-30&sortBy=publishedAt')
+  	this.newsService.getData('everything?q=bitcoin&from=2019-01-03&sortBy=publishedAt')
 		.subscribe(data => {
 			console.log(data);
       this.data = data
@@ -20,7 +20,7 @@ export class CrencaPage implements OnInit {
 
   onGoToCrenca(article){
     this.newsService.currentArticle = article
-    this.router.navigate(['/resp-crenca'])
+    this.router.navigate(['/tabs/resp-crenca'])
   }
 
 }

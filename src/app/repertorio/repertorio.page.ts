@@ -16,7 +16,7 @@ export class RepertorioPage implements OnInit {
   constructor(private newsService: NewsService, private router: Router) { }
 
   ngOnInit() {
-  	this.newsService.getData('everything?q=bitcoin&from=2018-12-30&sortBy=publishedAt')
+  	this.newsService.getData('everything?q=bitcoin&from=2019-01-05&sortBy=publishedAt')
   		.subscribe(data => {
         this.data = _.clone(data)
         this.filtredData = data
@@ -26,7 +26,7 @@ export class RepertorioPage implements OnInit {
 
   getRepertorio(article){
     this.newsService.currentArticle = article
-    this.router.navigate(['/resp-repertorio'])
+    this.router.navigate(['/tabs/resp-repertorio'])
   }
 
   getFiltredRepertorio(ev: any){
