@@ -13,13 +13,15 @@
         </p>
       </div>
     </ng-container>
-	<ion-card *ngFor="let item of agendas" color='light'>
+	<ion-card *ngFor="let item of agendas" >
 	   <ion-card-header>
 	   	<ion-card-title>
 		   	{{item.titulo}}
 	   	</ion-card-title>
 	   </ion-card-header>
+      
 	    <ion-card-content>
+        
     		<p>Data: {{item.dataInicio.toDate() | date:'short'}}</p>
     		<p>Local: {{item.local}}</p>
     		<p>Status: {{item.status}}</p>

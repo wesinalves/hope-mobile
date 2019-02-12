@@ -5,10 +5,11 @@
 </ion-header>
 
 <ion-content padding>
-	<ion-text>
-		<h2>{{article.title}}</h2>
-	    <p>{{article.description}}</p>
-	    <p>{{article.content}}</p>
+	<ion-text *ngIf="repertorio">
+		<h2>{{repertorio.titulo}}</h2>
+	    <p>{{repertorio.autor}}</p>
+	    <p>{{repertorio.ano}}</p>
+	    <p [innerHtml]="repertorio.letra"></p>
 		<ion-button size="small" [routerLink]="['/tabs/repertorio']" routerDirection="back">Voltar</ion-button>
 	</ion-text>
 

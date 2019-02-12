@@ -5,11 +5,20 @@
 </ion-header>
 
 <ion-content>
+	
 	<!-- List of Text Items -->
-	<ion-searchbar showCancelButton cancelButtonText="Custom Cancel" (ionChange) = getFilter($event) (ionClear)=getCleared() id="searchText"></ion-searchbar>
+	<ion-searchbar showCancelButton cancelButtonText="Custom Cancel" (ionChange) = getFilteredRepertorio($event) (ionClear)=getCleared() id="searchText"></ion-searchbar>
+  <ng-container *ngIf="!repertorios || repertorios.length == 0">
+      <div *ngFor="let n of [0,1,2]" padding>
+        <ion-skeleton-text></ion-skeleton-text>
+        <p>
+          <ion-skeleton-text class="fake-skeleton"></ion-skeleton-text>
+        </p>
+      </div>
+    </ng-container>
 	<ion-list>
-	  <ion-item (click)="getRepertorio(article)" *ngFor="let article of filtredData?.articles">
-	    <ion-label>{{article.title}}</ion-label>
+	  <ion-item lines="inset" button [routerLink]="['/tabs/resp-repertorio', item.id]" *ngFor="let item of filteredRepertorios">
+	    <ion-label>{{item.titulo}}</ion-label>
 	  </ion-item>
 	  
 	</ion-list>

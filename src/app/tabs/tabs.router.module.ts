@@ -76,11 +76,32 @@ const routes: Routes = [
       },
 
       {
-        path: 'resp-repertorio',
+        path: 'resp-repertorio/:id',
         children: [
           {
             path: '',
             loadChildren: '../resp-repertorio/resp-repertorio.module#RespRepertorioPageModule'
+          }
+        ]
+      },
+
+      {
+        path: 'mais',
+        children: [
+          {
+            path: '',
+            loadChildren: '../mais/mais.module#MaisPageModule'
+          }
+        ]
+      },
+
+      
+      {
+        path: 'contato',
+        children: [
+          {
+            path: '',
+            loadChildren: '../contato/contato.module#ContatoPageModule'
           }
         ]
       },

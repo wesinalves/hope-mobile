@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>HOPE 2.0</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+	<!-- List of Text Items -->
+	<ion-list lines="inset">
+	  <ion-item [routerLink]="['/tabs/ideais']">
+	  	<ion-icon name="checkbox" slot="start" ></ion-icon>
+	    <ion-label>Ideais JA</ion-label>
+	  </ion-item>
+	  <ion-item [routerLink]="['/tabs/ideais']">
+	  	<ion-icon name="flag" slot="start"></ion-icon>
+	  	<ion-label>A nossa bandeira</ion-label>
+	  </ion-item>
+	  <ion-item [routerLink]="['/tabs/sort']">
+	  	<ion-icon name="football" slot="start"></ion-icon>
+	  	<ion-label>Sorteio digital</ion-label>
+	  </ion-item>
+
+	   <ion-item [routerLink]="['/tabs/contato']">
+	  	<ion-icon name="call" slot="start"></ion-icon>
+	    <ion-label>Contato</ion-label>
+	  </ion-item>
+	  
+	  
+	</ion-list>
+	
+</ion-content>

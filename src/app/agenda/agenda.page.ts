@@ -14,6 +14,7 @@ export class AgendaPage implements OnInit {
   ngOnInit() {
 	this.agendaService.getAgendas().subscribe(res => {
         this.agendas = res;
+        console.log(res);
       });
   }
 
