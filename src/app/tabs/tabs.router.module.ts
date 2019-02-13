@@ -105,6 +105,16 @@ const routes: Routes = [
           }
         ]
       },
+
+      {
+        path: 'roleta',
+        children: [
+          {
+            path: '',
+            loadChildren: '../roleta/roleta.module#RoletaPageModule'
+          }
+        ]
+      },
       
     ]
   },
