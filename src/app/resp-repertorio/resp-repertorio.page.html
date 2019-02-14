@@ -9,7 +9,7 @@
 		<h2>{{repertorio.titulo}}</h2>
 	    <p>{{repertorio.autor}}</p>
 	    <p>{{repertorio.ano}}</p>
-	    <p [innerHtml]="repertorio.letra"></p>
+	    <div [innerHtml]="repertorio.letra"></div>
 		<ion-button size="small" [routerLink]="['/tabs/repertorio']" routerDirection="back">Voltar</ion-button>
 	</ion-text>
 

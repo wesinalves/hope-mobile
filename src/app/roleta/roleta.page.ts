@@ -33,11 +33,11 @@ export class RoletaPage {
      */
    	private _CONTEXT : any;
 
-	private options = ["$100", "$10", "$25", "$250", "$30", "$1000", "$1", "$200", "$45", "$500", "$5", "$20", 
-		"Lose", "$1000000", "Lose", "$350", "$5", "$99"];
+	private options: string[];
+  private valores: string[];
 
 	private startAngle = 0;
-	private arc = Math.PI / (this.options.length / 2);
+	private arc: any
 	private spinTimeout = null;
 
 	private spinArcStart = 10;
@@ -54,14 +54,7 @@ export class RoletaPage {
 
 
    ngOnInit() {
-   	this._CANVAS 		    = this.canvasEl.nativeElement;
-	this._CANVAS.width  	= 380;
-	this._CANVAS.height 	= 500;
-
-	this.initialiseCanvas();
-	this.drawRouletteWheel();
-	console.log('i am here')
-	console.log(this._CANVAS)
+    
    }
 
 
@@ -80,48 +73,6 @@ export class RoletaPage {
       {
          this.setupCanvas();
       }
-   }
-
-
-
-
-   /**
-     * Create a circle using canvas drawing API
-     *
-     * @public
-     * @method drawCircle
-     * @return {none}
-     */
-   drawCircle() : void
-   {
-      this.clearCanvas();
-      this._CONTEXT.beginPath();
-
-      // x, y, radius, startAngle, endAngle
-      this._CONTEXT.arc(this._CANVAS.width/2, this._CANVAS.height/2, 80, 0, 2 * Math.PI);
-      this._CONTEXT.lineWidth   = 1;
-      this._CONTEXT.strokeStyle = '#333';
-      this._CONTEXT.stroke();
-   }
-
-
-
-
-   /**
-     * Create a square using canvas drawing API
-     *
-     * @public
-     * @method drawSquare
-     * @return {none}
-     */
-   drawSquare() : void
-   {
-      this.clearCanvas();
-      this._CONTEXT.beginPath();
-      this._CONTEXT.rect(this._CANVAS.width/2 - 100, this._CANVAS.height/2 - 100, 200, 200);
-      this._CONTEXT.lineWidth   = 1;
-      this._CONTEXT.strokeStyle = '#333';
-      this._CONTEXT.stroke();
    }
 
 
@@ -287,7 +238,7 @@ export class RoletaPage {
 	  this.ctx.save();
 	  this.ctx.font = 'bold 30px Helvetica, Arial';
 	  var text = this.options[index]
-	  this.ctx.fillText(text, 200 - this.ctx.measureText(text).width / 2, 400 + 10);
+	  this.ctx.fillText(text, 200 - this.ctx.measureText(text).width / 2, 350 + 10);
 	  this.ctx.restore();
 	}
 
@@ -296,6 +247,25 @@ export class RoletaPage {
 	  var tc = ts*t;
 	  return b+c*(tc + -3*ts + 3*t);
 	}
+
+  addValue(valores){
+    this.options = valores.split(',');
+    if(this.options){
+      this.arc = Math.PI / (this.options.length / 2);
+      this._CANVAS        = this.canvasEl.nativeElement;
+      this._CANVAS.width    = 380;
+      this._CANVAS.height   = 400;
+
+      this.initialiseCanvas();
+      this.drawRouletteWheel();
+    }
+  }
+
+  deleteRoulete(){
+    this.options = [];
+    this.valores = [];
+    this.clearCanvas();
+  }
 
 	
 

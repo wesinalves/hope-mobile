@@ -115,6 +115,15 @@ const routes: Routes = [
           }
         ]
       },
+      {
+        path: 'simbolos',
+        children: [
+          {
+            path: '',
+            loadChildren: '../simbolos/simbolos.module#SimbolosPageModule'
+          }
+        ]
+      },
       
     ]
   },
