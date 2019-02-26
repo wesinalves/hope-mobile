@@ -12,13 +12,20 @@ export class AgendaPage implements OnInit {
   constructor(private agendaService: AgendaService) { }
 
   ngOnInit() {
-	this.agendaService.getAgendas().subscribe(res => {
-        this.agendas = res;
+
+  this.agendaService.getAgendas().subscribe(res => {
+        this.getAgendasAtivas(res);
       });
   }
 
   remove(item) {
       this.agendaService.removeAgenda(item.id);
+  }
+
+  getAgendasAtivas(agendas){
+    this.agendas = agendas.filter((a) => {
+        return (a.status.toLowerCase() == 'ativo');
+    })
   }
 
 }
