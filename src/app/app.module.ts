@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, RouteReuseStrategy, Routes } from '@angular/router';
 
@@ -15,7 +15,9 @@ import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
-registerLocaleData(localePt);
+
+registerLocaleData(localePt)
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,7 +29,8 @@ registerLocaleData(localePt);
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: LOCALE_ID, useValue:'pt-BR' }
   ],
   bootstrap: [AppComponent]
 })
