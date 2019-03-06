@@ -4,15 +4,13 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://newsapi.org/v2',
-  apiKey: 'c09297e4fc9f4ab79587263da8079874',
   firebase:{
   	apiKey: "AIzaSyD-_yTWsJFcA9UppFVFjGmNawzDiPiqjxw",
-	authDomain: "hope-e982f.firebaseapp.com",
-	databaseURL: "https://hope-e982f.firebaseio.com",
-	projectId: "hope-e982f",
-	storageBucket: "hope-e982f.appspot.com",
-	messagingSenderId: "945982550474"
+  	authDomain: "hope-e982f.firebaseapp.com",
+  	databaseURL: "https://hope-e982f.firebaseio.com",
+  	projectId: "hope-e982f",
+  	storageBucket: "hope-e982f.appspot.com",
+  	messagingSenderId: "945982550474"
   }
 };
 

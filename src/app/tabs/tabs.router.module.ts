@@ -54,26 +54,7 @@ const routes: Routes = [
           }
         ]
       },
-
-      {
-        path: 'crenca',
-        children: [
-          {
-            path: '',
-            loadChildren: '../crenca/crenca.module#CrencaPageModule'
-          }
-        ]
-      },
-
-      {
-        path: 'resp-crenca',
-        children: [
-          {
-            path: '',
-            loadChildren: '../resp-crenca/resp-crenca.module#RespCrencaPageModule'
-          }
-        ]
-      },
+          
 
       {
         path: 'resp-repertorio/:id',

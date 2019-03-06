@@ -33,8 +33,8 @@ export class RoletaPage {
      */
    	private _CONTEXT : any;
 
-	private options: string[];
-  private valores: string[];
+	public options: string[];
+  	private valores: string[];
 
 	private startAngle = 0;
 	private arc: any
@@ -177,8 +177,8 @@ export class RoletaPage {
 	      this.ctx.fillStyle = this.getColor(i, this.options.length);
 
 	      this.ctx.beginPath();
-	      this.ctx.arc(200, 200, outsideRadius, angle, angle + this.arc, false);
-	      this.ctx.arc(200, 200, insideRadius, angle + this.arc, angle, true);
+	      this.ctx.arc(180, 180, outsideRadius, angle, angle + this.arc, false);
+	      this.ctx.arc(180, 180, insideRadius, angle + this.arc, angle, true);
 	      this.ctx.stroke();
 	      this.ctx.fill();
 
@@ -188,8 +188,8 @@ export class RoletaPage {
 	      this.ctx.shadowBlur    = 0;
 	      this.ctx.shadowColor   = "rgb(220,220,220)";
 	      this.ctx.fillStyle = "black";
-	      this.ctx.translate(200 + Math.cos(angle + this.arc / 2) * textRadius, 
-	                    200 + Math.sin(angle + this.arc / 2) * textRadius);
+	      this.ctx.translate(180 + Math.cos(angle + this.arc / 2) * textRadius, 
+	                    180 + Math.sin(angle + this.arc / 2) * textRadius);
 	      this.ctx.rotate(angle + this.arc / 2 + Math.PI / 2);
 	      var text = this.options[i];
 	      this.ctx.fillText(text, -this.ctx.measureText(text).width / 2, 0);
@@ -199,14 +199,14 @@ export class RoletaPage {
 	    //Arrow
 	    this.ctx.fillStyle = "black";
 	    this.ctx.beginPath();
-	    this.ctx.moveTo(200 - 4, 200 - (outsideRadius + 5));
-	    this.ctx.lineTo(200 + 4, 200 - (outsideRadius + 5));
-	    this.ctx.lineTo(200 + 4, 200 - (outsideRadius - 5));
-	    this.ctx.lineTo(200 + 9, 200 - (outsideRadius - 5));
-	    this.ctx.lineTo(200 + 0, 200 - (outsideRadius - 13));
-	    this.ctx.lineTo(200 - 9, 200 - (outsideRadius - 5));
-	    this.ctx.lineTo(200 - 4, 200 - (outsideRadius - 5));
-	    this.ctx.lineTo(200 - 4, 200 - (outsideRadius + 5));
+	    this.ctx.moveTo(180 - 4, 180 - (outsideRadius + 5));
+	    this.ctx.lineTo(180 + 4, 180 - (outsideRadius + 5));
+	    this.ctx.lineTo(180 + 4, 180 - (outsideRadius - 5));
+	    this.ctx.lineTo(180 + 9, 180 - (outsideRadius - 5));
+	    this.ctx.lineTo(180 + 0, 180 - (outsideRadius - 13));
+	    this.ctx.lineTo(180 - 9, 180 - (outsideRadius - 5));
+	    this.ctx.lineTo(180 - 4, 180 - (outsideRadius - 5));
+	    this.ctx.lineTo(180 - 4, 180 - (outsideRadius + 5));
 	    this.ctx.fill();
 	  }
 	}
@@ -238,7 +238,7 @@ export class RoletaPage {
 	  this.ctx.save();
 	  this.ctx.font = 'bold 30px Helvetica, Arial';
 	  var text = this.options[index]
-	  this.ctx.fillText(text, 200 - this.ctx.measureText(text).width / 2, 350 + 10);
+	  this.ctx.fillText(text, 180 - this.ctx.measureText(text).width / 2, 350 + 10);
 	  this.ctx.restore();
 	}
 
@@ -253,8 +253,8 @@ export class RoletaPage {
     if(this.options){
       this.arc = Math.PI / (this.options.length / 2);
       this._CANVAS        = this.canvasEl.nativeElement;
-      this._CANVAS.width    = 380;
-      this._CANVAS.height   = 400;
+      this._CANVAS.width    = 360;
+      this._CANVAS.height   = 380;
 
       this.initialiseCanvas();
       this.drawRouletteWheel();

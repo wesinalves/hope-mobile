@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="tertiary">
+  <ion-toolbar color="primary">
     <ion-title>HOPE 2.0</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,7 +13,7 @@
 		</ion-item>
 		<ion-button color="success" size="small" (click)="addValue(valores)">Iniciar roleta</ion-button>
 	</ng-container>
-	<div class="ion-canvas" >
+	<div class="ion-canvas" (click)="spin()">
 		  <canvas #canvas></canvas>
 	</div>
 	<ion-button color="primary" expand="full" (click)="spin()" *ngIf="options">Girar roleta</ion-button>

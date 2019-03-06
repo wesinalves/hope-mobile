@@ -7,11 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SortPage implements OnInit {
   
-  private low: any;
-  private high: any;
-  private rand: number;
-  private lastRand: number;
-  private numbers: string[];
+  public low: any;
+  public high: any;
+  public rand: number;
+  public lastRand: number;
+  public numbers: string[];
 
 
   constructor() { }
