@@ -1,6 +1,6 @@
 {
   "name": "hope",
-  "version": "0.0.1",
+  "version": "1.1.0",
   "author": "Wesin Ribeiro",
   "homepage": "https://wesinribeiro.com/",
   "scripts": {
@@ -27,7 +27,7 @@
     "@ionic/angular": "4.0.0-rc.1",
     "@ionic/pro": "2.0.4",
     "angularfire2": "^5.1.1",
-    "cordova-android": "7.1.4",
+    "cordova-android": "9.0",
     "cordova-plugin-advanced-http": "2.0.4",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-file": "^6.0.1",
@@ -77,7 +77,7 @@
       "cordova-plugin-device": {},
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-ionic-webview": {
-        "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
+        "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "28.+"
       },
       "cordova-plugin-ionic-keyboard": {}
     },
