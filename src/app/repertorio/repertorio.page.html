@@ -3,17 +3,21 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
 	
 	<!-- List of Text Items -->
 	<ion-searchbar showCancelButton cancelButtonText="Custom Cancel" (ionChange) = getFilteredRepertorio($event) (ionClear)=getCleared() id="searchText"></ion-searchbar>
-  <ng-container *ngIf="!repertorios || repertorios.length == 0">
+    <ng-container *ngIf="!alfabeto">
       <div *ngFor="let n of [0,1,2]" padding>
         <ion-skeleton-text></ion-skeleton-text>
         <p>
           <ion-skeleton-text class="fake-skeleton"></ion-skeleton-text>
         </p>
       </div>
+    </ng-container>
+    <ng-container *ngIf="!filteredRepertorios">
+        <h2>Pesquisa Alfabética:</h2>
+        <ion-button href="#" color='dark' *ngFor="let letter of alfabeto">{{letter}}</ion-button>
     </ng-container>
 	<ion-list>
 	  <ion-item lines="inset" button [routerLink]="['/tabs/resp-repertorio', item.id]" *ngFor="let item of filteredRepertorios">

@@ -12,6 +12,8 @@ export class RepertorioPage implements OnInit {
 
   filteredRepertorios: Repertorio[];
   repertorios: Repertorio[];
+  alfabeto: string[];
+  
 
   constructor(private repertorioService: RepertorioService, private router: Router) { }
 
@@ -19,7 +21,8 @@ export class RepertorioPage implements OnInit {
   	
     this.repertorioService.getRepertorios().subscribe(res => {
         this.repertorios = _.clone(res);
-        this.filteredRepertorios = res;
+        this.alfabeto = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','x','z'];
+        /*this.filteredRepertorios = res;*/
       });
 
   }
@@ -33,14 +36,14 @@ export class RepertorioPage implements OnInit {
 
     let serVal = ev.target.value;
     if(serVal && serVal.trim() != ''){
-      this.filteredRepertorios = this.repertorios.filter((a) => {
+      this.filteredRepertorios = this.repertorios.sort().filter((a) => {
         return (a.titulo.toLowerCase().indexOf(serVal.toLowerCase()) > -1);
-      })
+      }).sort()
     }
   }
 
   getCleared(){
-    this.filteredRepertorios = _.clone(this.repertorios)
+    this.filteredRepertorios = null
   }
 
 }
