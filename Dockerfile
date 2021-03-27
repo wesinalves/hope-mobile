@@ -1,5 +1,5 @@
 # base image
-FROM node:14.15.5
+FROM node:10.24.0
 
 # set working directory
 WORKDIR /app
@@ -7,7 +7,8 @@ WORKDIR /app
 # install and cache app dependencies
 COPY package.json /app/package.json
 RUN npm install
-RUN npm install -g @angular/cli@9.0.6 @ionic/cli cordova
+RUN npm install -g @angular/cli@7.1.4 @ionic/cli cordova \
+    && npm cache clear --force
 
 # add app
 COPY . /app
