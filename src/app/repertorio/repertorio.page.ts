@@ -32,6 +32,8 @@ export class RepertorioPage implements OnInit {
 
   }
 
+  // do not filter but search
+
   getFilteredRepertorio(ev: any){
 
     let serVal = ev.target.value;

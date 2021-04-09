@@ -1,9 +1,10 @@
 version: "3.9"
 services:
   ionic:
-    image: hope:dev
+    image: hope:dev2
     volumes: 
       - .:/app
     working_dir: /app
     ports: 
       - "8100:8100"
+    command: ['ionic','serve','--host 0.0.0.0']

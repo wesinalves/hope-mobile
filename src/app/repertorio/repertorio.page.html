@@ -15,10 +15,7 @@
         </p>
       </div>
     </ng-container>
-    <ng-container *ngIf="!filteredRepertorios">
-        <h2>Pesquisa Alfabética:</h2>
-        <ion-button href="#" color='dark' *ngFor="let letter of alfabeto">{{letter}}</ion-button>
-    </ng-container>
+   
 	<ion-list>
 	  <ion-item lines="inset" button [routerLink]="['/tabs/resp-repertorio', item.id]" *ngFor="let item of filteredRepertorios">
 	    <ion-label>{{item.titulo}}</ion-label>
